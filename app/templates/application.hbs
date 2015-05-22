@@ -1,13 +1,18 @@
 <div id="header">
+  <div id="call-to-action">
+    {{#unless isOnIndexPage}}
+      {{#link-to "/"}} {{fa-icon "fa-long-arrow-left" size=2}} {{/link-to}}
+    {{/unless}}
+  </div>
   <div id="volume">
     {{jqui-slider value=volume min=0 max=100 step=1}}
     {{#if muted}}
-      {{fa-icon "fa-volume-off" size=3}}
+      {{fa-icon "fa-volume-off" size=2}}
     {{else}}
       {{#if lowVolume}}
-        {{fa-icon "fa-volume-down" size=3}}
+        {{fa-icon "fa-volume-down" size=2}}
       {{else}}
-        {{fa-icon "fa-volume-up" size=3}}
+        {{fa-icon "fa-volume-up" size=2}}
       {{/if}}
     {{/if}}
   </div>
@@ -15,4 +20,9 @@
 <div id="content">{{outlet}}</div>
 <div id="footer">
   <audio autoplay="true" loop {{bind-attr volume="audioVolume"}} preload {{bind-attr src="playingURL"}}></audio>
+
+  <div id="video-container" {{bind-attr class="showYoutubePlayer:show:hide"}}>
+    <div id="video-overlay"></div>
+    <iframe onload="this.width=screen.width/2;this.height=screen.height/2;" {{bind-attr src="youtubeURL"}}></iframe>
+  </div>
 </div>

@@ -28,6 +28,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 
 html,
@@ -35,49 +36,43 @@ body,
 body > .ember-view {
   background: @emerald;
   font-family: 'Roboto';
-  font-weight: 300;
+  font-size: 2vh;
+  line-height: 4vh;
+  font-weight: 400;
   height: 100%;
   width: 100%;
 }
 
+iframe {
+  border: none;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
 body{
-  &[sound='thunderstorm'] > .ember-view {
+  &[sound] > .ember-view {
     background: @black;
-  }
-
-  &[sound='tree'] > .ember-view {
-    background: @tree;
-  }
-
-  &[sound='fire'] > .ember-view {
-    background: @fire;
-  }
-
-  &[sound='coffee'] > .ember-view {
-    background: @coffee;
-  }
-
-  &[sound='rain'] > .ember-view {
-    background: @rainy;
-  }
-
-  &[sound='leaf'] > .ember-view {
-    background: @leaf;
-  }
-
-  &[sound='windy'] > .ember-view {
-    background: @windy;
-    #volume {
-      color: @black !important;
-    }
-  }
-
-  &[sound='moon-o'] > .ember-view {
-    background: @moon;
   }
 }
 
+a {
+  color: @paper-transparent;
+  text-decoration: none;
 
+  &:hover,
+  &:active {
+    color: @paper;
+    text-decoration: none;
+  }
+}
+
+::-webkit-input-placeholder { color: @paper-transparent; }
+:-moz-placeholder { color: @paper-transparent; }
+::-moz-placeholder { color: @paper-transparent; }
+:-ms-input-placeholder { color: @paper-transparent; }
 
 [data-ember-action] {
   cursor: pointer;
@@ -85,19 +80,28 @@ body{
 
 #header {
   height: 10vh;
-
   .make-lg-column(12);
+
+  #call-to-action {
+    height: 100%;
+    .make-lg-column(3);
+
+    i {
+      text-align: left;
+      .vertical-align;
+    }
+  }
 
   #volume {
     height: 100%;
     text-align: right;
-    color: @paper;
+    color: @paper-transparent;
 
     .make-lg-column(3);
-    .make-lg-column-offset(9);
+    .make-lg-column-offset(6);
 
     .ui-slider {
-      background: @paper;
+      background: @paper-transparent;
       border: none;
       border-radius: 0;
       height: 2px;
@@ -106,7 +110,7 @@ body{
       .vertical-align;
 
       .ui-slider-handle {
-        background: @paper;
+        background: @paper-transparent;
         border: none;
         border-radius: 100%;
         cursor: pointer;
@@ -117,6 +121,10 @@ body{
 
         &:focus {
           outline: none;
+        }
+
+        &:active {
+          background: @paper;
         }
       }
     }
@@ -131,19 +139,17 @@ body{
 }
 
 #content {
-  height: 80vh;
 
   .make-lg-column(8);
   .make-lg-column-offset(2);
 
-  #sounds {
-
+  .page {
     .make-lg-column(12);
 
     .sound-container {
       color: @paper-transparent;
       font-size: 10vh;
-      margin-bottom: 5vh;
+      margin-bottom: 10vh;
       text-align: center;
       .make-lg-column(6);
     }
@@ -157,11 +163,82 @@ body{
         color: @paper;
       }
     }
+
+    input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid @paper-transparent;
+      color: @paper-transparent;
+      .make-lg-column(6);
+      .make-lg-column-offset(3);
+
+      &:focus,
+      &:active {
+        color: @paper;
+        border-bottom: 2px solid @paper;
+        outline: none;
+      }
+    }
+  }
+
+  #youtube-repeat {
+    ul {
+      margin-top: 5vh;
+      background: @paper;
+      position: absolute !important;
+      z-index: 100;
+      padding: 0 15px !important;
+      .make-lg-column(12);
+
+      li {
+        list-style: none;
+        z-index: 101;
+        &:hover {
+          background: @rainy;
+        }
+      }
+    }
+
+
+  }
+
+  #index-greeting {
+    color: @paper-transparent;
+    font-size: 3vh;
+    text-align: center;
+
+    .make-lg-column(12);
+  }
+
+  #links {
+    color: @paper-transparent;
+    font-size: 10vh;
+    margin-top: 10vh;
+    text-align: center;
+
+    .make-lg-column(12);
+
+    a {
+      margin-bottom: 10vh;
+    }
   }
 }
 
 #footer {
   height: 10vh;
-
   .make-lg-column(12);
+
+  #video-container {
+    height: 60vh;
+    margin-top: 10vh;
+    .make-lg-column(12);
+
+    #video-overlay {
+      position: absolute;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      z-index: 10;
+    }
+  }
 }

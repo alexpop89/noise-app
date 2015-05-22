@@ -19,13 +19,14 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'default-src': "'none'",
-      'script-src': "'self'",
+      'default-src': "'self' https://www.youtube.com",
+      'script-src': "'self' 'unsafe-eval' 'unsafe-inline' https://www.youtube.com/iframe_api https://s.ytimg.com",
       'font-src': "'self' http://fonts.gstatic.com",
-      'connect-src': "'self'",
-      'img-src': "'self'",
-      'style-src': "'self' http://fonts.googleapis.com",
-      'media-src': "'self'"
+      'connect-src': "'self' https://www.youtube.com https://www.googleapis.com",
+      'img-src': "'self' https://www.youtube.com/v/*",
+      'frame-src': "https://www.youtube.com http://www.youtube.com",
+      'style-src': "'self' 'unsafe-eval' http://fonts.googleapis.com",
+      'media-src': "'self' https://www.youtube.com"
     }
   };
 

@@ -1,0 +1,11 @@
+<div id="youtube-repeat" class="page">
+  {{input id="youtube-search" value=query placeholder="search on youtube..."}}
+  <ul id="suggestion-list">
+    {{#each song in model}}
+      <li>
+        <img {{bind-attr src="song.thumbnail"}}/>
+        {{song.title}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

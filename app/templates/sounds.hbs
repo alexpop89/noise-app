@@ -1,0 +1,15 @@
+<div id="sounds" class="page">
+  {{#each sound in model itemController="sound"}}
+    {{#with sound as item}}
+      <div class="sound-container">
+        <div {{bind-attr id="model.title"}} {{bind-attr class="model.isActive:active :sound"}} {{action "select"}}>
+          {{#if model.isFontAwesome}}
+            {{fa-icon model.title action="select"}}
+          {{else}}
+            {{w-i model.title action="select"}}
+          {{/if}}
+        </div>
+      </div>
+    {{/with}}
+  {{/each}}
+</div>

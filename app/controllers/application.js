@@ -1,13 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['index'],
+  needs: ['sounds', 'repeat'],
 
   volume: 100,
 
-  playingURL: Ember.computed.alias('controllers.index.playingURL'),
+  playingURL: Ember.computed.alias('controllers.sounds.playingURL'),
 
-  bodyClass: Ember.computed.alias('controllers.index.playingSound'),
+  bodyClass: Ember.computed.alias('controllers.sounds.playingSound'),
+
+  youtubeURL: Ember.computed.alias('controllers.repeat.youtubeURL'),
+
+  isOnIndexPage: function () {
+    return this.currentRouteName === 'index';
+  }.property('currentRouteName'),
+
+  showYoutubePlayer: function () {
+    return this.currentRouteName === 'repeat';
+  }.property('currentRouteName'),
 
   muted: function () {
     return this.get('volume') === 0;
@@ -22,6 +32,10 @@ export default Ember.Controller.extend({
   }.property('volume'),
 
   setBodyClass: function () {
-    Ember.$('body').attr('sound', this.get('bodyClass'));
+    if (this.get('bodyClass')) {
+      Ember.$('body').attr('sound', this.get('bodyClass'));
+    } else {
+      Ember.$('body').removeAttr('sound');
+    }
   }.observes('bodyClass')
 });

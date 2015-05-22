@@ -10,6 +10,9 @@ var app = new EmberApp({
   },
   'ember-cli-jquery-ui': {
       'theme': 'ui-lightness'
+  },
+  babel: {
+    comments: false
   }
 });
 
