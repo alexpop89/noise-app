@@ -1,3 +1,18 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
+<div id="header">
+  <div id="volume">
+    {{jqui-slider value=volume min=0 max=100 step=1}}
+    {{#if muted}}
+      {{fa-icon "fa-volume-off" size=3}}
+    {{else}}
+      {{#if lowVolume}}
+        {{fa-icon "fa-volume-down" size=3}}
+      {{else}}
+        {{fa-icon "fa-volume-up" size=3}}
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+<div id="content">{{outlet}}</div>
+<div id="footer">
+  <audio autoplay="true" loop {{bind-attr volume="audioVolume"}} preload {{bind-attr src="playingURL"}}></audio>
+</div>

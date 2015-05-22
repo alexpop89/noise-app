@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
+@import 'bootstrap';
+
+@emerald: rgba(46, 204, 113, 1);
+@paper: rgba(239, 239, 239, 1);
+@paper-transparent: rgba(239, 239, 239, 0.6);
+@clouds: rgba(236, 240, 241, 1);
+@black: rgba(44, 62, 80, 1);
+@turquoise: rgba(26, 188, 156, 1);
+@rainy: rgba(96, 125, 139, 1);
+@windy: rgba(236, 240, 241, 1);
+@tree: rgba(26, 188, 156, 1);
+@leaf: rgba(255, 152, 0, 1);
+@fire: rgba(244, 67, 54, 1);
+@coffee: rgba(121, 85, 72, 1);
+@moon: rgba(52, 73, 94, 1);
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html,
+body,
+body > .ember-view {
+  background: @emerald;
+  font-family: 'Roboto';
+  font-weight: 300;
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  &[sound='thunderstorm'] > .ember-view {
+    background: @black;
+  }
+
+  &[sound='tree'] > .ember-view {
+    background: @tree;
+  }
+
+  &[sound='fire'] > .ember-view {
+    background: @fire;
+  }
+
+  &[sound='coffee'] > .ember-view {
+    background: @coffee;
+  }
+
+  &[sound='rain'] > .ember-view {
+    background: @rainy;
+  }
+
+  &[sound='leaf'] > .ember-view {
+    background: @leaf;
+  }
+
+  &[sound='windy'] > .ember-view {
+    background: @windy;
+    #volume {
+      color: @black !important;
+    }
+  }
+
+  &[sound='moon-o'] > .ember-view {
+    background: @moon;
+  }
+}
+
+
+
+[data-ember-action] {
+  cursor: pointer;
+}
+
+#header {
+  height: 10vh;
+
+  .make-lg-column(12);
+
+  #volume {
+    height: 100%;
+    text-align: right;
+    color: @paper;
+
+    .make-lg-column(3);
+    .make-lg-column-offset(9);
+
+    .ui-slider {
+      background: @paper;
+      border: none;
+      border-radius: 0;
+      height: 2px;
+      z-index: 9999;
+      .make-lg-column(9);
+      .vertical-align;
+
+      .ui-slider-handle {
+        background: @paper;
+        border: none;
+        border-radius: 100%;
+        cursor: pointer;
+        margin-left: 0px;
+        top: -7px;
+        height: 15px;
+        width: 15px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    i {
+      text-align: left;
+      .make-lg-column(2);
+      .make-lg-column-offset(1);
+      .vertical-align;
+    }
+  }
+}
+
+#content {
+  height: 80vh;
+
+  .make-lg-column(8);
+  .make-lg-column-offset(2);
+
+  #sounds {
+
+    .make-lg-column(12);
+
+    .sound-container {
+      color: @paper-transparent;
+      font-size: 10vh;
+      margin-bottom: 5vh;
+      text-align: center;
+      .make-lg-column(6);
+    }
+
+    .sound {
+      cursor: pointer;
+      display: inline-block;
+
+      &:active,
+      &.active {
+        color: @paper;
+      }
+    }
+  }
+}
+
+#footer {
+  height: 10vh;
+
+  .make-lg-column(12);
+}
