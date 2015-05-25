@@ -10,11 +10,21 @@ export default Ember.ArrayController.extend({
 
   videoKey: '7Nak3uwJTMc',
 
+  itemSelected: function (model) {
+    if (model.get('id')) {
+      this.set('videoKey', model.get('id'));
+    }
+  },
+
   youtubeURL: function () {
-    return 'http://www.youtube.com/v/' + this.get('videoKey') + '?version=3&loop=1&autoplay=0&controls=0&autohide=1&playlist=' + this.get('videoKey');
+    return 'http://www.youtube.com/v/' + this.get('videoKey') + '?version=3&loop=1&autoplay=1&controls=0&autohide=1&playlist=' + this.get('videoKey');
   }.property('videoKey'),
 
   doQuery: function () {
-    this.set('model', this.store.findQuery('song', this.get('query')));
+    if (this.get('query')) {
+      this.set('model', this.store.findQuery('song', this.get('query')));
+    } else {
+      this.set('model', []);
+    }
   }.observes('query')
 });

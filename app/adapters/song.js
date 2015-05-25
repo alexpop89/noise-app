@@ -5,7 +5,7 @@ export default DS.Adapter.extend({
 
   order: 'rating',
 
-  videoDefinition: 'high',
+  //videoDefinition: 'high',
 
   part: 'snippet',
 
@@ -14,8 +14,7 @@ export default DS.Adapter.extend({
   key: 'AIzaSyB3Sbx4KS1-4cai0BJMqLQmWZ6rs6OYRfQ',
 
   findQuery: function (typeName, typeClass, query) {
-    debugger;
-    return Ember.$.get(this.get('host'), {
+        return Ember.$.get(this.get('host'), {
         order: this.get('order'),
         videoDefinition: this.get('videoDefinition'),
         part: this.get('part'),
