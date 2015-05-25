@@ -8,7 +8,7 @@ export default Ember.ArrayController.extend({
 
   suggestions: [],
 
-  videoKey: '7Nak3uwJTMc',
+  videoKey: '',
 
   itemSelected: function (model) {
     if (model.get('id')) {
