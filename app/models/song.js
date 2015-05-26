@@ -6,15 +6,4 @@ var Song = DS.Model.extend({
   videoKey: DS.attr('string')
 });
 
-Song.reopenClass({
-  FIXTURES: [
-    {
-      id: 1,
-      title: 'test',
-      thumbnail: 'thumb',
-      videoKey: 'key'
-    }
-  ]
-});
-
 export default Song;

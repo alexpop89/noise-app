@@ -8,6 +8,11 @@ export default Ember.ArrayController.extend({
 
   playingSound: '',
 
+  /**
+   * a sound item was selected
+   *
+   * @param  {sound} model - the sound model selected
+   */
   itemSelected: function (soundObject) {
     var activeSound = this.get('model.content').findProperty('isActive', true);
 

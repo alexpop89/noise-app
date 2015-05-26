@@ -1,0 +1,12 @@
+<div id="settings">
+  {{#each setting in model itemController="setting"}}
+    <div class="setting">
+      {{#with setting as item}}
+        <div>{{model.title}}</div>
+        {{#each color in model.possibleValues}}
+          <div {{bind-attr class="color :color"}} {{action "colorSelected" model color}}></div>
+        {{/each}}
+      {{/with}}
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,50 @@
+#content {
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid @paper-transparent;
+    color: @paper-transparent;
+    .make-lg-column(6);
+    .make-lg-column-offset(3);
+
+    &:focus,
+    &:active {
+      color: @paper;
+      border-bottom: 2px solid @paper;
+      outline: none;
+    }
+  }
+
+  #youtube-repeat {
+    ul {
+      margin-top: 5vh;
+      max-height: 30vh;
+      overflow: auto;
+      background: transparent;
+      position: absolute !important;
+      z-index: 100;
+      padding: 0 15px !important;
+      .make-lg-column(8);
+      .make-lg-column-offset(2);
+
+      li {
+        background: @paper;
+        height: auto;
+        list-style: none;
+        z-index: 101;
+
+        &:hover {
+          background: @emerald;
+        }
+
+        div {
+          height: 5vh;
+          overflow: hidden;
+          line-height: 5vh;
+          text-overflow: ellipsis;
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+}

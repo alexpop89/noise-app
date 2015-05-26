@@ -26,7 +26,7 @@ module.exports = function(environment) {
       'img-src': "'self' https://www.youtube.com https://i.ytimg.com http://www.youtube.com http://i.ytimg.com",
       'frame-src': "https://www.youtube.com http://www.youtube.com",
       'style-src': "'self' 'unsafe-eval' http://fonts.googleapis.com",
-      'media-src': "'self' https://www.youtube.com"
+      'media-src': "'self' https://www.youtube.com http://www.youtube.com"
     }
   };
 

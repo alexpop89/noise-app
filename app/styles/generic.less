@@ -1,0 +1,131 @@
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+html,
+body,
+body > .ember-view {
+  font-family: 'Roboto';
+  font-size: 2vh;
+  line-height: 4vh;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: @emerald;
+  -webkit-transition: background 3000ms ease-in-out;
+  -moz-transition: background 3000ms ease-in-out;
+  -ms-transition: background 3000ms ease-in-out;
+  -o-transition: background 3000ms ease-in-out;
+  transition: background 3000ms ease-in-out;
+
+  &[background='blood-orange']{
+    background: @blood-orange;
+  }
+  &[background='orange'] {
+    background: @orange;
+  }
+  &[background='amber'] {
+    background: @amber;
+  }
+  &[background='lime'] {
+    background: @lime;
+  }
+  &[background='nephritis'] {
+    background: @nephritis
+  }
+  &[background='teal'] {
+    background: @teal;
+  }
+  &[background='cyan'] {
+    background: @cyan;
+  }
+  &[background='green'] {
+    background: @green;
+  }
+  &[background='light-blue'] {
+    background: @light-blue;
+  }
+  &[background='blue'] {
+    background: @blue;
+  }
+  &[background='purple'] {
+    background: @purple;
+  }
+  &[background='pink'] {
+    background: @pink;
+  }
+  &[background='red'] {
+    background: @red;
+  }
+  &[background='pumpkin'] {
+    background: @pumpkin;
+  }
+  &[background='asbestos'] {
+    background: @asbestos;
+  }
+  &[background='midnight-blue'] {
+    background: @midnight-blue;
+  }
+  &[background='emerald'] {
+    background: @emerald;
+  }
+  &[background='paper'] {
+    background: @paper;
+  }
+}
+
+iframe {
+  border: none;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+a {
+  color: @paper-transparent;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: @paper;
+    text-decoration: none;
+  }
+}
+
+::-webkit-input-placeholder { color: @paper-transparent; }
+:-moz-placeholder { color: @paper-transparent; }
+::-moz-placeholder { color: @paper-transparent; }
+:-ms-input-placeholder { color: @paper-transparent; }
+
+[data-ember-action] {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track
+{
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: @paper;
+	border: none;
+}

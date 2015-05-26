@@ -1,81 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
 @import 'bootstrap';
+@import 'colors';
+@import 'generic';
 
-@emerald: rgba(46, 204, 113, 1);
-@paper: rgba(239, 239, 239, 1);
-@paper-transparent: rgba(239, 239, 239, 0.6);
-@clouds: rgba(236, 240, 241, 1);
-@black: rgba(44, 62, 80, 1);
-@turquoise: rgba(26, 188, 156, 1);
-@rainy: rgba(96, 125, 139, 1);
-@windy: rgba(236, 240, 241, 1);
-@tree: rgba(26, 188, 156, 1);
-@leaf: rgba(255, 152, 0, 1);
-@fire: rgba(244, 67, 54, 1);
-@coffee: rgba(121, 85, 72, 1);
-@moon: rgba(52, 73, 94, 1);
+@import 'pages/index';
+@import 'pages/sounds';
+@import 'pages/repeat';
+@import 'pages/settings';
 
 .vertical-align {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
-
-* {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-}
-
-html,
-body,
-body > .ember-view {
-  background: @emerald;
-  font-family: 'Roboto';
-  font-size: 2vh;
-  line-height: 4vh;
-  font-weight: 400;
-  height: 100%;
-  width: 100%;
-}
-
-iframe {
-  border: none;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 9;
-}
-
-body{
-  &[sound] > .ember-view {
-    background: @black;
-  }
-}
-
-a {
-  color: @paper-transparent;
-  text-decoration: none;
-
-  &:hover,
-  &:active {
-    color: @paper;
-    text-decoration: none;
-  }
-}
-
-::-webkit-input-placeholder { color: @paper-transparent; }
-:-moz-placeholder { color: @paper-transparent; }
-::-moz-placeholder { color: @paper-transparent; }
-:-ms-input-placeholder { color: @paper-transparent; }
-
-[data-ember-action] {
-  cursor: pointer;
 }
 
 #header {
@@ -91,55 +27,9 @@ a {
       .vertical-align;
     }
   }
-
-  #volume {
-    height: 100%;
-    text-align: right;
-    color: @paper-transparent;
-
-    .make-lg-column(3);
-    .make-lg-column-offset(6);
-
-    .ui-slider {
-      background: @paper-transparent;
-      border: none;
-      border-radius: 0;
-      height: 2px;
-      z-index: 9999;
-      .make-lg-column(9);
-      .vertical-align;
-
-      .ui-slider-handle {
-        background: @paper-transparent;
-        border: none;
-        border-radius: 100%;
-        cursor: pointer;
-        margin-left: 0px;
-        top: -7px;
-        height: 15px;
-        width: 15px;
-
-        &:focus {
-          outline: none;
-        }
-
-        &:active {
-          background: @paper;
-        }
-      }
-    }
-
-    i {
-      text-align: left;
-      .make-lg-column(2);
-      .make-lg-column-offset(1);
-      .vertical-align;
-    }
-  }
 }
 
 #content {
-
   .make-lg-column(8);
   .make-lg-column-offset(2);
 
@@ -152,86 +42,6 @@ a {
       margin-bottom: 10vh;
       text-align: center;
       .make-lg-column(6);
-    }
-
-    .sound {
-      cursor: pointer;
-      display: inline-block;
-
-      &:active,
-      &.active {
-        color: @paper;
-      }
-    }
-
-    input {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid @paper-transparent;
-      color: @paper-transparent;
-      .make-lg-column(6);
-      .make-lg-column-offset(3);
-
-      &:focus,
-      &:active {
-        color: @paper;
-        border-bottom: 2px solid @paper;
-        outline: none;
-      }
-    }
-  }
-
-  #youtube-repeat {
-    ul {
-      margin-top: 5vh;
-      background: transparent;
-      position: absolute !important;
-      z-index: 100;
-      padding: 0 15px !important;
-      .make-lg-column(8);
-      .make-lg-column-offset(2);
-
-      li {
-        background: @paper;
-        height: auto;
-        list-style: none;
-        z-index: 101;
-
-        &:hover {
-          background: @emerald;
-        }
-
-        div {
-          height: 5vh;
-          overflow: hidden;
-          line-height: 5vh;
-          text-overflow: ellipsis;
-          text-transform: lowercase;
-        }
-      }
-    }
-
-
-  }
-
-  #index-greeting {
-    color: @paper-transparent;
-    font-size: 3vh;
-    text-align: center;
-
-    .make-lg-column(12);
-  }
-
-  #links {
-    color: @paper-transparent;
-    font-size: 10vh;
-    margin-top: 10vh;
-    text-align: center;
-
-    .make-lg-column(12);
-
-    a {
-      margin-bottom: 10vh;
     }
   }
 }
@@ -251,6 +61,21 @@ a {
       height: 100%;
       width: 100%;
       z-index: 10;
+    }
+  }
+
+  #video-player-controls {
+    color: @paper-transparent;
+    .make-lg-column(6);
+    .make-lg-column-offset(3);
+
+    .controls-container {
+      text-align: center;
+      .make-lg-column(4);
+
+      i {
+        cursor: pointer;
+      }
     }
   }
 }

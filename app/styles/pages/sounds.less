@@ -1,0 +1,58 @@
+#header {
+  #volume {
+    height: 100%;
+    text-align: right;
+    color: @paper-transparent;
+
+    .make-lg-column(3);
+    .make-lg-column-offset(6);
+
+    .ui-slider {
+      background: @paper-transparent;
+      border: none;
+      border-radius: 0;
+      height: 2px;
+      z-index: 9999;
+      .make-lg-column(9);
+      .vertical-align;
+
+      .ui-slider-handle {
+        background: @paper-transparent;
+        border: none;
+        border-radius: 100%;
+        cursor: pointer;
+        margin-left: 0px;
+        top: -7px;
+        height: 15px;
+        width: 15px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:active {
+          background: @paper;
+        }
+      }
+    }
+
+    i {
+      text-align: left;
+      .make-lg-column(2);
+      .make-lg-column-offset(1);
+      .vertical-align;
+    }
+  }
+}
+
+#content {
+  .sound {
+    cursor: pointer;
+    display: inline-block;
+
+    &:active,
+    &.active {
+      color: @paper;
+    }
+  }
+}
