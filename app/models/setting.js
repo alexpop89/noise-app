@@ -15,7 +15,7 @@ Setting.reopenClass({
       title: 'background color',
       label: 'background',
       isActive: true,
-      value: 'default',
+      value: window.localStorage.getItem('background') || 'default',
       possibleValues: ['blood-orange', 'orange', 'amber', 'lime', 'green', 'nephritis', 'teal', 'cyan', 'light-blue', 'blue', 'purple', 'pink', 'red', 'pumpkin', 'midnight-blue', 'asbestos', 'emerald']
     }
   ]

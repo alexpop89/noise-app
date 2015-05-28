@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['sounds', 'repeat', 'settings'],
+  needs: ['sounds', 'songs', 'settings'],
 
   volume: 100,
 
@@ -13,10 +13,11 @@ export default Ember.Controller.extend({
 
   textClass: Ember.computed.alias('controllers.settings.text'),
 
-  youtubeURL: Ember.computed.alias('controllers.repeat.youtubeURL'),
+  youtubeURL: Ember.computed.alias('controllers.songs.youtubeURL'),
 
-  settingsModel: function () {
-    this.store.find('setting');
+  init: function () {
+    this.set('bodyClass', window.localStorage.getItem('background'));
+    this.setBodyClass();
   },
 
   /**
@@ -43,7 +44,7 @@ export default Ember.Controller.extend({
    * @return {boolean}
    */
   showYoutubePlayer: function () {
-    return this.currentRouteName === 'repeat';
+    return this.currentRouteName === 'songs';
   }.property('currentRouteName'),
 
   /**
@@ -82,16 +83,5 @@ export default Ember.Controller.extend({
     } else {
       Ember.$('body').removeAttr('background');
     }
-  }.observes('bodyClass'),
-
-  /**
-   * set a stored class value for the body text elements
-   */
-  setBodyTextClass: function () {
-    if (this.get('textClass')) {
-      Ember.$('body').attr('text', this.get('textClass'));
-    } else {
-      Ember.$('text').removeAttr('background');
-    }
-  }.observes('textClass')
+  }.observes('bodyClass')
 });

@@ -4,8 +4,16 @@
     text-align: right;
     color: @paper-transparent;
 
+    .make-xs-column(3);
+    .make-sm-column(3);
+    .make-md-column(3);
     .make-lg-column(3);
+
+    .make-xs-column-offset(6);
+    .make-sm-column-offset(6);
+    .make-md-column-offset(6);
     .make-lg-column-offset(6);
+
 
     .ui-slider {
       background: @paper-transparent;
@@ -13,7 +21,11 @@
       border-radius: 0;
       height: 2px;
       z-index: 9999;
+      .make-xs-column(9);
+      .make-sm-column(9);
+      .make-md-column(9);
       .make-lg-column(9);
+
       .vertical-align;
 
       .ui-slider-handle {
@@ -38,8 +50,16 @@
 
     i {
       text-align: left;
+      .make-xs-column(2);
+      .make-sm-column(2);
+      .make-md-column(2);
       .make-lg-column(2);
+
+      .make-xs-column-offset(1);
+      .make-sm-column-offset(1);
+      .make-md-column-offset(1);
       .make-lg-column-offset(1);
+
       .vertical-align;
     }
   }

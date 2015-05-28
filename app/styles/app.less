@@ -5,7 +5,7 @@
 
 @import 'pages/index';
 @import 'pages/sounds';
-@import 'pages/repeat';
+@import 'pages/songs';
 @import 'pages/settings';
 
 .vertical-align {
@@ -16,10 +16,16 @@
 
 #header {
   height: 10vh;
+  .make-xs-column(12);
+  .make-sm-column(12);
+  .make-md-column(12);
   .make-lg-column(12);
 
   #call-to-action {
     height: 100%;
+    .make-xs-column(3);
+    .make-sm-column(3);
+    .make-md-column(3);
     .make-lg-column(3);
 
     i {
@@ -30,10 +36,20 @@
 }
 
 #content {
+  .make-xs-column(12);
+  .make-sm-column(10);
+  .make-md-column(8);
   .make-lg-column(8);
-  .make-lg-column-offset(2);
+
+  .make-xs-column-offset(0);
+  .make-sm-column-offset(1);
+  .make-md-column-offset(2);
+  .make-md-column-offset(2);
 
   .page {
+    .make-xs-column(12);
+    .make-sm-column(12);
+    .make-md-column(12);
     .make-lg-column(12);
 
     .sound-container {
@@ -41,6 +57,10 @@
       font-size: 10vh;
       margin-bottom: 10vh;
       text-align: center;
+
+      .make-xs-column(12);
+      .make-sm-column(6);
+      .make-md-column(6);
       .make-lg-column(6);
     }
   }
@@ -48,11 +68,17 @@
 
 #footer {
   height: 10vh;
+  .make-xs-column(12);
+  .make-sm-column(12);
+  .make-md-column(12);
   .make-lg-column(12);
 
   #video-container {
     height: 60vh;
     margin-top: 10vh;
+    .make-xs-column(12);
+    .make-sm-column(12);
+    .make-md-column(12);
     .make-lg-column(12);
 
     #video-overlay {
@@ -61,21 +87,6 @@
       height: 100%;
       width: 100%;
       z-index: 10;
-    }
-  }
-
-  #video-player-controls {
-    color: @paper-transparent;
-    .make-lg-column(6);
-    .make-lg-column-offset(3);
-
-    .controls-container {
-      text-align: center;
-      .make-lg-column(4);
-
-      i {
-        cursor: pointer;
-      }
     }
   }
 }

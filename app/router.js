@@ -8,6 +8,6 @@ var Router = Ember.Router.extend({
 export default Router.map(function() {
   this.resource('/', {path: 'index'});
   this.resource('sounds', {path: 'sounds'});
-  this.resource('repeat', {path: 'repeat'});
+  this.resource('songs', {path: 'songs'});
   this.resource('settings', {path: 'settings'});
 });

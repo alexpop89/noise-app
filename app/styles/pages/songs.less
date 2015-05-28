@@ -4,7 +4,15 @@
     border: none;
     border-bottom: 2px solid @paper-transparent;
     color: @paper-transparent;
+
+    .make-xs-column(6);
+    .make-sm-column(6);
+    .make-md-column(6);
     .make-lg-column(6);
+
+    .make-xs-column-offset(3);
+    .make-sm-column-offset(3);
+    .make-md-column-offset(3);
     .make-lg-column-offset(3);
 
     &:focus,
@@ -24,9 +32,17 @@
       position: absolute !important;
       z-index: 100;
       padding: 0 15px !important;
-      .make-lg-column(8);
-      .make-lg-column-offset(2);
 
+      .make-xs-column(8);
+      .make-sm-column(8);
+      .make-md-column(8);
+      .make-lg-column(8);
+
+      .make-xs-column-offset(2);
+      .make-sm-column-offset(2);
+      .make-md-column-offset(2);
+      .make-lg-column-offset(2);
+      
       li {
         background: @paper;
         height: auto;
